@@ -40,8 +40,23 @@ jobs:
         id: deploy-to-azure
         uses: Azure/webapps-deploy@v3.0.1
         with:
-          app-name: "fs-restaurant-api-app"
-          publish-profile: ${{ secrets.PUBLISH_PROFILE_DEV }}
-          
-          
-    
+          app-name: "fs-restaurantapi-dev"
+          publish-profile: ${{ secrets.PUBLISH_PROFILE_DEV }} 
+
+#  deploy-prod: 
+#    runs-on: ubuntu-latest
+#    needs: deploy-dev
+#    environment: 
+#      name: 'Prod'
+#      url: ${{ steps.deploy-to-azure.outputs.webapp-url }}
+#    steps:
+#      - name: Download a Build Artifact
+#        uses: actions/download-artifact@v4.1.7
+#        with:
+#          name: api-artifact
+#      - name: Azure WebApp deploy
+#        id: deploy-to-azure
+#        uses: Azure/webapps-deploy@v3.0.1
+#        with:
+#          app-name: "fs-restaurantapi-prod"
+#          publish-profile: ${{ secrets.PUBLISH_PROFILE_PROD }}
