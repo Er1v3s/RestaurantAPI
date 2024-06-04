@@ -40,7 +40,7 @@ jobs:
         id: deploy-to-azure
         uses: Azure/webapps-deploy@v3.0.1
         with:
-          app-name: "fs-restaurantapi-dev"
+          app-name: "fs-restaurant-api-app"
           publish-profile: ${{ secrets.PUBLISH_PROFILE_DEV }} 
 
 #  deploy-prod: 
